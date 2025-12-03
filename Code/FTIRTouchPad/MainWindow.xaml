@@ -1,0 +1,62 @@
+﻿<Window x:Class="FTIRTouchPad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Background="#111">
+
+    <Grid>
+
+        <Image x:Name="CameraView"
+               Stretch="Uniform"
+               RenderOptions.BitmapScalingMode="HighQuality"/>
+
+        <!-- Toolbar -->
+        <Border Background="#AA000000"
+                Padding="20"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top">
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+
+                <!-- Threshold debug -->
+                <CheckBox x:Name="MaskCheckBox"
+                          Content="Show Threshold Mask"
+                          Foreground="White"
+                          FontSize="16"
+                          Margin="0,0,20,0"/>
+
+                <!-- Padding mask debug -->
+                <CheckBox x:Name="PaddingMaskCheckBox"
+                          Content="Show Padding Mask"
+                          Foreground="White"
+                          FontSize="16"
+                          Margin="0,0,20,0"/>
+
+                <!-- Threshold slider -->
+                <StackPanel>
+                    <TextBlock Text="Threshold"
+                               Foreground="White"
+                               FontSize="14"/>
+                    <Slider x:Name="ThresholdSlider"
+                            Minimum="0" Maximum="255"
+                            Width="200"
+                            Value="128"/>
+                </StackPanel>
+
+                <!-- Padding slider -->
+                <StackPanel Margin="20,0,0,0">
+                    <TextBlock Text="Padding (px)"
+                               Foreground="White"
+                               FontSize="14"/>
+                    <Slider x:Name="PaddingSlider"
+                            Minimum="0" Maximum="200"
+                            Width="200"
+                            Value="50"/>
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>
